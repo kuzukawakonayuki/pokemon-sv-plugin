@@ -4,10 +4,10 @@ from JoycontrolPlugin import JoycontrolPlugin
 logger = logging.getLogger(__name__)
 
 processingCount = 999
-shortWait = 0.1
+shortWait = 0.15
 middleWait = 1
 longWait = 2
-screenWait = 3
+screenWait = 2.5
 itemNum = 1
 
 class MultiplicationGlitch(JoycontrolPlugin):
@@ -27,10 +27,10 @@ class MultiplicationGlitch(JoycontrolPlugin):
             {'button': 'a', 'wait': shortWait},
             {'button': 'up', 'wait': shortWait},
             {'button': 'up', 'wait': shortWait},
-            {'button': 'a', 'wait': middleWait},
-            {'button': 'a', 'wait': middleWait},
             {'button': 'a', 'wait': longWait},
             {'button': 'a', 'wait': middleWait},
+            {'button': 'a', 'wait': longWait},
+            {'button': 'a', 'wait': shortWait},
             {'button': 'right', 'wait': shortWait},
             {'button': 'up', 'wait': shortWait},
             {'button': 'up', 'wait': shortWait},
