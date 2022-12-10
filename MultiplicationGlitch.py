@@ -30,7 +30,7 @@ class MultiplicationGlitch(JoycontrolPlugin):
             {'button': 'a', 'wait': middleWait},
             {'button': 'a', 'wait': shortWait},
             {'button': 'a', 'wait': longWait},
-            {'button': 'a', 'wait': middleWait},
+            {'button': 'a', 'wait': longWait},
             {'button': 'right', 'wait': shortWait},
             {'button': 'up', 'wait': shortWait},
             {'button': 'up', 'wait': shortWait},
