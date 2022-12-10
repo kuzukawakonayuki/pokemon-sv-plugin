@@ -15,9 +15,9 @@ class MultiplicationGlitch(JoycontrolPlugin):
         logger.info('processing start')
         count = 0
         while count < processingCount:
-            MultiplicationGlitch.Reset(self)
-            MultiplicationGlitch.ItemSet(self)
-            MultiplicationGlitch.Multiplication(self)
+            await MultiplicationGlitch.Reset(self)
+            await MultiplicationGlitch.ItemSet(self)
+            await MultiplicationGlitch.Multiplication(self)
             count += 1
         logger.info('done')
 
