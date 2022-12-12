@@ -9,6 +9,7 @@ middleWait = 1
 longWait = 2
 screenWait = 2.5
 itemNum = 1
+itemLength = 0
 
 class MultiplicationGlitch(JoycontrolPlugin):
     async def run(self):
@@ -42,9 +43,9 @@ class MultiplicationGlitch(JoycontrolPlugin):
             {'button': 'up', 'wait': shortWait},
             {'button': 'up', 'wait': shortWait},
             {'button': 'a', 'wait': middleWait},
-            {'button': 'b', 'wait': screenWait},
-            {'button': 'left', 'wait': shortWait},
-            {'button': 'up', 'wait': shortWait},
+            #{'button': 'b', 'wait': screenWait},
+            #{'button': 'left', 'wait': shortWait},
+            #{'button': 'up', 'wait': shortWait},
         ]
         for command in commands:
             await self.button_push(command['button'])
@@ -65,6 +66,11 @@ class MultiplicationGlitch(JoycontrolPlugin):
         num = 0
         while num < itemNum:
             await self.button_push('right')
+            await self.wait(shortWait)
+            num += 1
+        length = 0
+        while length < itemLength:
+            await self.button_push('down')
             await self.wait(shortWait)
             num += 1
         await self.button_push('a')
