@@ -10,6 +10,7 @@ longWait = 2
 screenWait = 2.5
 itemNum = 1
 itemLength = 0
+setItemLength = 0
 
 class MultiplicationGlitch(JoycontrolPlugin):
     async def run(self):
@@ -63,16 +64,27 @@ class MultiplicationGlitch(JoycontrolPlugin):
         await self.wait(shortWait)
         await self.button_push('a')
         await self.wait(screenWait)
+
+        # setItemNum
         num = 0
         while num < itemNum:
             await self.button_push('right')
             await self.wait(shortWait)
             num += 1
-        length = 0
+
+        # setItemLength
+        length = setItemLength
         while length < itemLength:
             await self.button_push('down')
             await self.wait(shortWait)
-            num += 1
+            length += 1
+
+        # resetItemLength
+        if setItemLength < length:
+            setItemLength += 1
+        else:
+            setItemLength = 0
+
         await self.button_push('a')
         await self.wait(middleWait)
         await self.button_push('a')
