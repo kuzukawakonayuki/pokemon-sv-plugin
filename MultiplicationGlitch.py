@@ -23,7 +23,6 @@ class MultiplicationGlitch(JoycontrolPlugin):
             count += 1
         logger.info('done')
 
-    @staticmethod
     async def Multiplication(self):
         commands = [
             {'button': 'a', 'wait': shortWait},
@@ -52,7 +51,6 @@ class MultiplicationGlitch(JoycontrolPlugin):
             await self.button_push(command['button'])
             await self.wait(command['wait'])
 
-    @staticmethod
     async def ItemSet(self):
         await self.button_push('a')
         await self.wait(middleWait)
@@ -74,6 +72,7 @@ class MultiplicationGlitch(JoycontrolPlugin):
 
         # setItemLength
         length = setItemLength
+
         while length < itemLength:
             await self.button_push('down')
             await self.wait(shortWait)
@@ -96,7 +95,6 @@ class MultiplicationGlitch(JoycontrolPlugin):
         await self.button_push('b')
         await self.wait(screenWait)
 
-    @staticmethod
     async def Reset(self):
         i = 0
         while i < 20:
