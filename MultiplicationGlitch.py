@@ -18,14 +18,14 @@ class MultiplicationGlitch(JoycontrolPlugin):
         nowLength = 0
         while count < processingCount:
             await MultiplicationGlitch.Reset(self)
-            await MultiplicationGlitch.ItemSet(self, nowLength)
+            #await MultiplicationGlitch.ItemSet(self, nowLength)
             await MultiplicationGlitch.Multiplication(self)
             count += 1
             # resetItemLength
-            if nowLength < itemLength:
-                nowLength += 1
-            else:
-                nowLength = 0
+            #if nowLength < itemLength:
+            #    nowLength += 1
+            #else:
+            #    nowLength = 0
         logger.info('done')
 
     async def Multiplication(self):
